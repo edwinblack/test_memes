@@ -1,0 +1,14 @@
+version: "3"
+services:
+  app:
+    image: django-memes
+    container_name: django-memes
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        APP_ENV: local
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/usr/src/app
